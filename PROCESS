@@ -1,0 +1,165 @@
+# PROCESS
+
+This document describes the end-to-end workflow of **knowledge-digest**.
+
+The goal is simple:
+
+> Turn scattered reading into **reviewed, structured, reusable knowledge**  
+> with **minimal human effort**.
+
+---
+
+## Overview
+
+The system is designed as an **automated pipeline with a human review gate**.
+
+- AI handles repetitive, mechanical work
+- Humans only make value judgments
+
+The human answers one question:
+
+> **Is this worth keeping?**
+
+---
+
+## High-level flow
+
+Link → Fetch → Digest → Review → Commit → Reuse
+
+
+---
+
+## Step-by-step process
+
+### 1. Input: discover content
+
+**Trigger**
+- A good article found via WeChat, web, or any other source
+
+**Human responsibility**
+- Decide that the content is *potentially* worth processing
+- Send the link to OpenClaw
+
+No summarization, no categorization at this stage.
+
+---
+
+### 2. Fetch: retrieve original content
+
+**Handled by**
+- OpenClaw
+
+**What happens**
+- Download or extract the original content
+- Store the raw source locally for traceability
+
+**Why this matters**
+- Keeps a stable reference to the original material
+- Avoids relying solely on AI-generated summaries
+
+---
+
+### 3. Digest: structure the knowledge
+
+**Handled by**
+- Custom Knowledge Skills
+
+**Responsibilities**
+- Extract key ideas
+- Generate a structured knowledge digest
+- Normalize metadata (author, date, topics, tags)
+- Populate a note using `NOTE_TEMPLATE.md`
+
+**Important rule**
+- If information is missing or uncertain, the skill must:
+  - state it explicitly
+  - lower the confidence level
+
+At this stage, the output is a **draft knowledge digest**.
+
+---
+
+### 4. Review: human-in-the-loop
+
+**Handled by**
+- Human reviewer
+
+**Review focus**
+- Is the content worth keeping?
+- Are the key ideas accurate?
+- Is the “Why this matters” section meaningful?
+- Are the takeaways actually reusable?
+
+Humans do **not** rewrite everything.
+They only correct, refine, or reject.
+
+If rejected, the pipeline stops here.
+
+---
+
+### 5. Commit: store as long-term memory
+
+**Handled by**
+- OpenClaw + GitHub
+
+**What happens**
+- Approved digest is committed to the repository
+- Commit message follows a consistent format
+- Git history becomes the audit trail
+
+GitHub acts as:
+- the storage layer
+- the review boundary
+- the long-term memory
+
+---
+
+### 6. Reuse: knowledge as an asset
+
+Once committed, knowledge digests can be:
+- searched
+- compared across topics
+- grouped by author
+- reused in future decisions, designs, or explanations
+
+At this point, knowledge is no longer “saved” —  
+it becomes **available for use**.
+
+---
+
+## Roles and responsibilities
+
+### Human
+- Decide keep / discard
+- Refine meaning, not format
+- Own value judgment
+
+### AI (OpenClaw + Skills)
+- Fetch content
+- Extract structure
+- Normalize format
+- Handle repetition consistently
+
+---
+
+## Design constraints
+
+- No heavy taxonomy
+- No mandatory manual categorization
+- No AI-based value judgment
+- Low friction at every step
+
+If a step adds cognitive load without reducing human effort,
+it does not belong in this pipeline.
+
+---
+
+## Guiding principle
+
+> Knowledge is not a collection problem.  
+> It is a **processing problem**.
+
+This workflow treats personal knowledge
+as an **engineering system**, not a personal habit.
+
+
