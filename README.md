@@ -103,6 +103,8 @@ GitHub provides:
 - ✅ OpenClaw integrated for orchestration
 - ✅ Custom knowledge skills in place
 - ✅ GitHub as the final knowledge store
+- ✅ Automated workflow from URL to structured knowledge digest
+- ✅ Human review gate implemented
 
 ---
 

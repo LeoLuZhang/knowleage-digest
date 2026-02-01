@@ -1,0 +1,20 @@
+{
+  "name": "article-digest",
+  "description": "Transforms an article URL into a structured knowledge digest following NOTE_TEMPLATE.md",
+  "version": "1.0.0",
+  "entryPoint": "index.js",
+  "dependencies": [
+    "curl",
+    "pandoc"
+  ],
+  "input": {
+    "type": "url",
+    "required": true,
+    "description": "URL of the article to process"
+  },
+  "output": {
+    "type": "knowledge_digest",
+    "template": "NOTE_TEMPLATE.md",
+    "location": "knowledge_digested/"
+  }
+}
