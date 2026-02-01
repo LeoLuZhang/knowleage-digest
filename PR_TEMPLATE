@@ -1,0 +1,47 @@
+## What is this PR about?
+
+- [ ] New knowledge digest
+- [ ] Update / refinement of existing digest
+- [ ] Structural / template change
+
+---
+
+## Source
+
+- Link:
+- Author:
+- Date (if known):
+
+---
+
+## Review checklist
+
+### Content quality
+- [ ] TL;DR clearly states why this is worth keeping
+- [ ] Key ideas are accurate and grounded in the source
+- [ ] No obvious hallucination or over-interpretation
+
+### Reusability
+- [ ] “Why this matters” is concrete and scenario-based
+- [ ] Actionable takeaways are actually actionable
+- [ ] This digest adds something new (not a duplicate)
+
+### Structure & metadata
+- [ ] Frontmatter is complete and correct
+- [ ] Topics / tags make sense
+- [ ] Confidence level is reasonable
+
+---
+
+## Reviewer notes (optional)
+
+- Anything unclear or missing?
+- Any follow-up or related notes worth linking?
+
+---
+
+## Final decision
+
+- [ ] Accept and merge
+- [ ] Needs revision
+- [ ] Discard (not worth keeping)
