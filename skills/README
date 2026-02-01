@@ -1,0 +1,54 @@
+# Knowledge Skills
+
+This directory contains the **Knowledge Skills** used by `knowledge-digest`.
+
+Skills define *how raw content is transformed into structured knowledge*.
+They are deterministic, reusable, and intentionally limited in scope.
+
+---
+
+## What are Knowledge Skills?
+
+Knowledge Skills are **AI-assisted processing units** that perform
+repeatable, mechanical tasks in the knowledge pipeline.
+
+They do **not** decide what is valuable.
+They do **not** replace human judgment.
+
+> Skills transform content.  
+> Humans decide whether it matters.
+
+---
+
+## Responsibilities of Skills
+
+Each Knowledge Skill is responsible for:
+
+- Fetching or processing source content
+- Extracting key ideas from the source
+- Structuring output using `NOTE_TEMPLATE.md`
+- Normalizing metadata (author, dates, topics, tags)
+- Explicitly stating uncertainty or missing information
+- Assigning a confidence level to the output
+
+The output of a skill is always a **draft**, never a final truth.
+
+---
+
+## What Skills deliberately do NOT do
+
+To avoid overreach and hallucination, skills must NOT:
+
+- Decide whether a piece of content is worth keeping
+- Filter content based on “importance”
+- Invent facts or fill gaps silently
+- Optimize for style over accuracy
+- Replace the human review step
+
+If a skill cannot confidently infer something from the source,
+it must say so explicitly.
+
+---
+
+## Skill lifecycle
+
